@@ -13,6 +13,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="{{ mix('css/frontend.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/tailwind.css') }}" rel="stylesheet">
+    {{-- <link href="{{ mix('css/tailwind.css') }}" rel="stylesheet"> --}}
+    {{-- <link href="{{ URL::asset('css/tailwind.css') }}" rel="stylesheet"> --}}
     <livewire:styles />
     @stack('after-styles')
 </head>

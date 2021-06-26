@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use LangleyFoxall\LaravelNISTPasswordRules\PasswordRules;
+use App\Domains\BioData\Models\Biodata;
 
 /**
  * Class RegisterController.
@@ -95,7 +96,14 @@ class RegisterController
     protected function create(array $data)
     {
         abort_unless(config('boilerplate.access.user.registration'), 404);
-
-        return $this->userService->registerUser($data);
+        $user = $this->userService->registerUser($data);
+        $biodata = Biodata::create([
+            'user_id' => $user->id,
+            'dob' => $data['dob'],
+            'phone' => $data['phone'],
+            'address' => $data['address'],
+            'occupation' => $data['occupation']
+        ]);
+        return $user;
     }
 }

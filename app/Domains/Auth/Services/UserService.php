@@ -123,6 +123,14 @@ class UserService extends BaseService
                 'active' => isset($data['active']) && $data['active'] === '1',
             ]);
 
+            $biodata = Biodata::create([
+                'user_id' => $user->id,
+                'dob' => $data['dob'],
+                'phone' => $data['phone'],
+                'address' => $data['address'],
+                'occupation' => $data['occupation']
+            ]);
+
             $user->syncRoles($data['roles'] ?? []);
 
             if (! config('boilerplate.access.user.only_roles')) {

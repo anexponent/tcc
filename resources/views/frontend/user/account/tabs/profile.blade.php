@@ -20,6 +20,26 @@
             <td>{{ $logged_in_user->email }}</td>
         </tr>
 
+        <tr>
+            <th>@lang('Phone Number')</th>
+            <td>{{ $logged_in_user->biodata->phone }}</td>
+        </tr>
+
+        <tr>
+            <th>@lang('Date of Birth')</th>
+            <td>{{ $logged_in_user->biodata->dob }}</td>
+        </tr>
+
+        <tr>
+            <th>@lang('Address')</th>
+            <td>{{ $logged_in_user->biodata->address }}</td>
+        </tr>
+
+        <tr>
+            <th>@lang('Occupation')</th>
+            <td>{{ $logged_in_user->biodata->occupation }}</td>
+        </tr>
+
         @if ($logged_in_user->isSocial())
             <tr>
                 <th>@lang('Social Provider')</th>

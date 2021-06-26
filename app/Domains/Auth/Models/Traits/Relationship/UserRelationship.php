@@ -16,4 +16,8 @@ trait UserRelationship
     {
         return $this->morphMany(PasswordHistory::class, 'model');
     }
+
+    public function biodata(){
+        return $this->hasOne('App\Domains\BioData\Models\Biodata');
+    }
 }

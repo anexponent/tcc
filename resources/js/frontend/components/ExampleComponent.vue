@@ -1,5 +1,5 @@
 <template>
-    <span>Laravel Boilerplate</span>
+    <span>TCC EAGLES EMPOWERMENT PROGRAM</span>
 </template>
 
 <script>

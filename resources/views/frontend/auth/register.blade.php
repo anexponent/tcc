@@ -22,12 +22,46 @@
                             </div><!--form-group-->
 
                             <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">@lang('E-mail Address')</label>
+                                <label for="email" class="col-md-4 col-form-label text-md-right">@lang('Email')</label>
 
                                 <div class="col-md-6">
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="{{ __('E-mail Address') }}" value="{{ old('email') }}" maxlength="255" required autocomplete="email" />
+                                    <input type="text" name="email" id="email" class="form-control" value="{{ old('email') }}" placeholder="{{ __('Email') }}" maxlength="100" required autofocus autocomplete="email" />
                                 </div>
                             </div><!--form-group-->
+
+
+                            <div class="form-group row">
+                                <label for="dob" class="col-md-4 col-form-label text-md-right">@lang('Date of Birth')</label>
+
+                                <div class="col-md-6">
+                                    <input type="date" name="dob" id="dob" class="form-control" value="{{ old('dob') }}" placeholder="{{ __('Name') }}" maxlength="100" required autofocus autocomplete="dob" />
+                                </div>
+                            </div><!--form-group-->
+
+                            <div class="form-group row">
+                                <label for="phone" class="col-md-4 col-form-label text-md-right">@lang('Phone Number')</label>
+
+                                <div class="col-md-6">
+                                    <input type="text" name="phone" id="phone" class="form-control" value="{{ old('phone') }}" placeholder="{{ __('Name') }}" maxlength="100" required autofocus autocomplete="phone" />
+                                </div>
+                            </div><!--form-group-->
+
+                            <div class="form-group row">
+                                <label for="address" class="col-md-4 col-form-label text-md-right">@lang('Address')</label>
+
+                                <div class="col-md-6">
+                                    <input type="text" name="address" id="address" class="form-control" placeholder="{{ __('Address') }}" value="{{ old('address') }}" maxlength="255" required autocomplete="address" />
+                                </div>
+                            </div><!--form-group-->
+
+                            <div class="form-group row">
+                                <label for="occupation" class="col-md-4 col-form-label text-md-right">@lang('Occupation/Type of Business')</label>
+
+                                <div class="col-md-6">
+                                    <input type="text" name="occupation" id="occupation" class="form-control" placeholder="{{ __('Occupation') }}" value="{{ old('occupation') }}" maxlength="255" required autocomplete="occupation" />
+                                </div>
+                            </div><!--form-group-->
+
 
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">@lang('Password')</label>
