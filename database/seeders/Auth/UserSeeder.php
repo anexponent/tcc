@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
             'name' => 'Super Admin',
             'email' => 'admin@admin.com',
             'password' => 'secret',
-            'email_verified_at' => now(),
+            // 'email_verified_at' => now(),
             'active' => true,
         ]);
 
@@ -36,7 +36,7 @@ class UserSeeder extends Seeder
                 'name' => 'Test User',
                 'email' => 'user@user.com',
                 'password' => 'secret',
-                'email_verified_at' => now(),
+                // 'email_verified_at' => now(),
                 'active' => true,
             ]);
             Biodata::create([
