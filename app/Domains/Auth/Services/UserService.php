@@ -88,7 +88,7 @@ class UserService extends BaseService
                     'email' => $info->email,
                     'provider' => $provider,
                     'provider_id' => $info->id,
-                    'email_verified_at' => now(),
+                    // 'email_verified_at' => now(),
                 ]);
             } catch (Exception $e) {
                 DB::rollBack();
@@ -119,7 +119,7 @@ class UserService extends BaseService
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => $data['password'],
-                'email_verified_at' => isset($data['email_verified']) && $data['email_verified'] === '1' ? now() : null,
+                // 'email_verified_at' => isset($data['email_verified']) && $data['email_verified'] === '1' ? now() : null,
                 'active' => isset($data['active']) && $data['active'] === '1',
             ]);
 
@@ -205,7 +205,7 @@ class UserService extends BaseService
 
         if ($user->canChangeEmail() && $user->email !== $data['email']) {
             $user->email = $data['email'];
-            $user->email_verified_at = null;
+            // $user->email_verified_at = null;
             $user->sendEmailVerificationNotification();
             session()->flash('resent', true);
         }
@@ -337,7 +337,7 @@ class UserService extends BaseService
             'password' => $data['password'] ?? null,
             'provider' => $data['provider'] ?? null,
             'provider_id' => $data['provider_id'] ?? null,
-            'email_verified_at' => $data['email_verified_at'] ?? null,
+            // 'email_verified_at' => $data['email_verified_at'] ?? null,
             'active' => $data['active'] ?? true,
         ]);
     }

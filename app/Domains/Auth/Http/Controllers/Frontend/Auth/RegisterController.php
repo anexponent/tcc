@@ -95,6 +95,7 @@ class RegisterController
      */
     protected function create(array $data)
     {
+        // dd($data);
         abort_unless(config('boilerplate.access.user.registration'), 404);
         $user = $this->userService->registerUser($data);
         $biodata = Biodata::create([

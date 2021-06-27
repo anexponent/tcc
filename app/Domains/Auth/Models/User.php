@@ -11,8 +11,8 @@ use App\Domains\Auth\Notifications\Frontend\VerifyEmail;
 use DarkGhostHunter\Laraguard\Contracts\TwoFactorAuthenticatable;
 use DarkGhostHunter\Laraguard\TwoFactorAuthentication;
 use Database\Factories\UserFactory;
-use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+// use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -23,12 +23,12 @@ use Spatie\Permission\Traits\HasRoles;
 /**
  * Class User.
  */
-class User extends Authenticatable implements MustVerifyEmail, TwoFactorAuthenticatable
+class User extends Authenticatable implements TwoFactorAuthenticatable
 {
     use HasFactory,
         HasRoles,
         Impersonate,
-        MustVerifyEmailTrait,
+        // MustVerifyEmailTrait,
         Notifiable,
         SoftDeletes,
         TwoFactorAuthentication,

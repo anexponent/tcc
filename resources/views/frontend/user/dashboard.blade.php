@@ -48,13 +48,13 @@
                                 Please check the form below for errors
                             </div>
                         @endif --}}
-                        <div>@lang('Apply for Support')</div>
+                        <div class="text-xl mb-3">@lang('Apply for Support')</div>
                         <div>
                             <form action="{{ Route('frontend.support.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div>
-                                    <label for="typ_of_support">Type of Support</label>
-                                    <select name="type_of_support">
+                                    <label for="typ_of_support" class="text-lg">Type of Support</label>
+                                    <select name="type_of_support" class="w-full rounded-lg h-10 p-2">
                                         <option value="">Select Support Type</option>
                                         <option value="capacity development">Capacity Development </option>
                                         <option value="training/professional exam">Training/Profesional Exam</option>
@@ -63,17 +63,17 @@
                                 </div>
 
                                 <div>
-                                    <label for="prior knowledge">Prior Knowledge in the Area of Business</label>
-                                    <input type="text" name="prior_knowledge">
+                                    <label for="prior knowledge" class="text-lg mt-2">Prior Knowledge in the Area of Business</label>
+                                    <input type="text" name="prior_knowledge" class="w-full h-10 border border-black rounded p-2">
                                 </div>
 
                                 <div>
-                                    <label for="lpo">Verifiable LPO </label>
-                                    <input type="file" name="lpo">
+                                    <label for="lpo" class="text-lg mt-2">Verifiable LPO </label>
+                                    <input type="file" name="lpo" class="w-full h-10 border border-black rounded p-2">
                                 </div>
 
                                 <div>
-                                    <button>Submit</button>
+                                    <button class="bg-green-700 rounded-lg p-2 px-3 text-white mt-3">Submit</button>
                                 </div>
                             </form>
                         </div>

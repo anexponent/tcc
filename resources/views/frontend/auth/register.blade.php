@@ -26,6 +26,7 @@
 
                                 <div class="col-md-6">
                                     <input type="text" name="email" id="email" class="form-control" value="{{ old('email') }}" placeholder="{{ __('Email') }}" maxlength="100" required autofocus autocomplete="email" />
+                                    {{-- <input type="checkbox" name="emal_verified" value="1" id="email_verified" checked readonly class="form-check-input" required> --}}
                                 </div>
                             </div><!--form-group-->
 
@@ -34,7 +35,7 @@
                                 <label for="dob" class="col-md-4 col-form-label text-md-right">@lang('Date of Birth')</label>
 
                                 <div class="col-md-6">
-                                    <input type="date" name="dob" id="dob" class="form-control" value="{{ old('dob') }}" placeholder="{{ __('Name') }}" maxlength="100" required autofocus autocomplete="dob" />
+                                    <input type="date" name="dob" id="dob" class="form-control" value="{{ old('dob') }}" placeholder="{{ __('dob') }}" maxlength="100" required autofocus autocomplete="dob" />
                                 </div>
                             </div><!--form-group-->
 
@@ -42,7 +43,7 @@
                                 <label for="phone" class="col-md-4 col-form-label text-md-right">@lang('Phone Number')</label>
 
                                 <div class="col-md-6">
-                                    <input type="text" name="phone" id="phone" class="form-control" value="{{ old('phone') }}" placeholder="{{ __('Name') }}" maxlength="100" required autofocus autocomplete="phone" />
+                                    <input type="text" name="phone" id="phone" class="form-control" value="{{ old('phone') }}" placeholder="{{ __('Phone Number') }}" maxlength="100" required autofocus autocomplete="phone" />
                                 </div>
                             </div><!--form-group-->
 
