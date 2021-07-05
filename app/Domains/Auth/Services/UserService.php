@@ -14,6 +14,7 @@ use App\Services\BaseService;
 use Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use App\Domains\BioData\Models\Biodata;
 
 /**
  * Class UserService.
@@ -122,14 +123,15 @@ class UserService extends BaseService
                 // 'email_verified_at' => isset($data['email_verified']) && $data['email_verified'] === '1' ? now() : null,
                 'active' => isset($data['active']) && $data['active'] === '1',
             ]);
-
-            $biodata = Biodata::create([
-                'user_id' => $user->id,
-                'dob' => $data['dob'],
-                'phone' => $data['phone'],
-                'address' => $data['address'],
-                'occupation' => $data['occupation']
-            ]);
+            if($user->type == 'user'){
+                $biodata = Biodata::create([
+                    'user_id' => $user->id,
+                    'dob' => $data['dob'],
+                    'phone' => $data['phone'],
+                    'address' => $data['address'],
+                    'occupation' => $data['occupation']
+                ]);
+            }
 
             $user->syncRoles($data['roles'] ?? []);
 
