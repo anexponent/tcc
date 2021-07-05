@@ -22,22 +22,22 @@
 
         <tr>
             <th>@lang('Phone Number')</th>
-            <td>{{ $logged_in_user->biodata->phone }}</td>
+            <td>{{ $logged_in_user->biodata->phone ?? null}}</td>
         </tr>
 
         <tr>
             <th>@lang('Date of Birth')</th>
-            <td>{{ $logged_in_user->biodata->dob }}</td>
+            <td>{{ $logged_in_user->biodata->dob ?? null}}</td>
         </tr>
 
         <tr>
             <th>@lang('Address')</th>
-            <td>{{ $logged_in_user->biodata->address }}</td>
+            <td>{{ $logged_in_user->biodata->address ?? null}}</td>
         </tr>
 
         <tr>
             <th>@lang('Occupation')</th>
-            <td>{{ $logged_in_user->biodata->occupation }}</td>
+            <td>{{ $logged_in_user->biodata->occupation ?? null}}</td>
         </tr>
 
         @if ($logged_in_user->isSocial())
