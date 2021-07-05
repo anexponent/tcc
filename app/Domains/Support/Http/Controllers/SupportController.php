@@ -24,7 +24,7 @@ class SupportController extends Controller
             'user_id' => Auth::user()->id,
             'type_of_support' => $r->input('type_of_support'),
             'prior_knowledge' => $r->input('prior_knowledge'),
-            'lpo' => $lpo_data
+            'lpo' => $lpo_data ?? null
         ]);
         if($support){
             return back()->with('success','Support Successfully Applied!');
