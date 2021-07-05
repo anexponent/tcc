@@ -40,17 +40,21 @@
                                 <strong>{{ $message }}</strong>
                             </div>
                         @endif
-
-                        @if(Auth::user()->support->count() > 0)
-                            <div>You have already applied</div>
+                        @if(Auth::user()->support)
+                            {{-- @if(Auth::user()->support->count() > 0) --}}
+                            <div class="text-info">
+                                <div class="h3">You have already applied</div>
+                                <div class="h4">You can login here to confirm the status of your empowerment</div>
+                                <div>Status: <span class="{{ (Auth::user()->support->status=='Pending') ? 'text-danger':'text-success' }}">{{ Auth::user()->support->status }}</span></div>
+                            </div>
                         @else
-                            <div class="text-xl mb-3">@lang('Apply for Support')</div>
+                            <div class="text-2xl mb-3 bg-yellow-800 text-white rounded-lg py-1 px-2">@lang('Apply for Support')</div>
                             <div>
                                 <form action="{{ Route('frontend.support.store') }}" method="post" enctype="multipart/form-data">
                                     @csrf
-                                    <div>
+                                    <div class="border-2 border-gray-700 mt-2 rounded-lg px-2">
                                         <label for="typ_of_support" class="text-lg">Type of Support</label>
-                                        <select name="type_of_support" class="w-full rounded-lg h-10 p-2">
+                                        <select name="type_of_support" class=" mb-2 w-full rounded-lg h-10 p-2">
                                             <option value="">Select Support Type</option>
                                             <option value="capacity development">Capacity Development </option>
                                             <option value="training/professional exam">Training/Profesional Exam</option>
@@ -58,14 +62,15 @@
                                         </select>
                                     </div>
 
-                                    <div>
-                                        <label for="prior knowledge" class="text-lg mt-2">Prior Knowledge in the Area of Business</label>
-                                        <input type="text" name="prior_knowledge" class="w-full h-10 border border-black rounded p-2">
+                                    <div class="border-2 border-gray-700 mt-2 rounded-lg px-2">
+                                        <label for="prior knowledge" class="text-lg mt-4">Prior Knowledge in the Area of Business</label>
+                                        <input type="text" name="prior_knowledge" class="mb-2 w-full h-10 border border-black rounded p-2">
                                     </div>
 
-                                    <div>
-                                        <label for="lpo" class="text-lg mt-2">Verifiable LPO </label>
+                                    <div class="border-2 border-gray-700 mt-2 rounded-lg px-2">
+                                        <label for="lpo" class="text-lg mt-4">Verifiable LPO </label>
                                         <input type="file" name="lpo" class="w-full h-10 border border-black rounded p-2">
+                                        <span class="text-danger"><small>Only upload LPO if four Support type is Business Support/Bridge Fund</small></span>
                                     </div>
 
                                     <div>

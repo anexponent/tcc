@@ -19,6 +19,7 @@ class CreateEmpowermentsTable extends Migration
             $table->string('type_of_support');
             $table->string('prior_knowledge');
             $table->mediumText('lpo')->nullable();
+            $table->string('status')->default('Pending');
             $table->timestamps();
 
             $table->foreign('user_id')

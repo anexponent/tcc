@@ -50,7 +50,7 @@ class RegisterController
      */
     public function redirectPath()
     {
-        return route(homeRoute());
+        return route(indexRoute());
     }
 
     /**

@@ -96,8 +96,17 @@
                 </div><!--title-->
 
                 <div class="links">
-                    <a class="btn btn-primary text-white" href="/login" target="_self"><i class="fa fa-login"></i> <h4><small>@lang('Login')</small></h4></a>
-                    <a class="btn btn-info text-white" href="/register" target="_self"><i class="fab fa-user"></i><h4><small>@lang('Register')</small></h4></a>
+                            @auth
+                                @if ($logged_in_user->isUser())
+                                    <a class="btn btn-info text-white" href="{{ route('frontend.user.dashboard') }}" target="_self"><i class="fab fa-user"></i><h4><small>@lang('Login to Apply')</small></h4></a>
+                                @endif
+                            @else
+                                <a class="btn btn-info text-white" href="{{ route('frontend.auth.login') }}" target="_self"><i class="fab fa-user"></i><h4><small>@lang('Login')</small></h4></a>
+                                @if (config('boilerplate.access.user.registration'))
+                                    {{-- <a href="{{ route('frontend.auth.register') }}">@lang('Register')</a> --}}
+                                    <a class="btn btn-info text-white" href="{{ route('frontend.auth.register') }}" target="_self"><i class="fab fa-user"></i><h4><small>@lang('Register')</small></h4></a>
+                                @endif
+                            @endauth
                 </div><!--links-->
             </div><!--content-->
         </div><!--app-->
