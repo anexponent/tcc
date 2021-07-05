@@ -11,6 +11,7 @@ class SupportController extends Controller
 {
     public function store(Request $r){
         $this->validate($r,[
+            'user_id' => 'unique:empowerments,user_id',
             'type_of_support' => 'required',
             'prior_knowledge' => 'required',
             'lpo' => 'nullable|mimes:jpg,jpeg,png|max:2048'

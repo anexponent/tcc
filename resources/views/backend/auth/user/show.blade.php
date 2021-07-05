@@ -81,7 +81,7 @@
                         <td>{{ $user->provider_id ?? __('N/A') }}</td>
                     </tr>
                 @endif
-
+                
                 <tr>
                     <th>@lang('Roles')</th>
                     <td>{!! $user->roles_label !!}</td>
@@ -92,6 +92,53 @@
                     <td>{!! $user->permissions_label !!}</td>
                 </tr>
             </table>
+            <hr>
+            @if($user->support)
+                <table>
+                    <tr>
+                        <th>@lang('Support Applied:')</th>
+                        <td>{!! ucfirst($user->support->type_of_support) !!}</td>
+                    </tr>
+
+                    <tr>
+                        <th>@lang('Prior Knowledge:')</th>
+                        <td>{!! ucfirst($user->support->prior_knowledge) !!}</td>
+                    </tr>  
+                    
+                    <tr>
+                        <th>@lang('Support Document:')</th>
+                        <td>
+                            @if($user->support->lpo != null)
+                                <a data-toggle="modal" data-target="#lpo">Open Document</a>
+                            @else
+                                No LPO Uploaded
+                            @endif
+                        </td>
+                    </tr>  
+                </table>
+            @endif
+
+
+            <!-- Modal -->
+            <div id="lpo" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-xl">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div><img src="data:image/jpg;base64, {{ $user->support->lpo }}" width="1100px"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                    </div>
+
+                </div>
+            </div>
         </x-slot>
 
         <x-slot name="footer">

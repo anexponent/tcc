@@ -20,4 +20,8 @@ trait UserRelationship
     public function biodata(){
         return $this->hasOne('App\Domains\BioData\Models\Biodata');
     }
+
+    public function support(){
+        return $this->hasOne('App\Domains\Support\Models\Support');
+    }
 }
