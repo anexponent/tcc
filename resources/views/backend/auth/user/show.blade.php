@@ -130,7 +130,7 @@
                         <h4 class="modal-title">Modal Header</h4>
                     </div>
                     <div class="modal-body">
-                        <div><img src="data:image/jpg;base64, {{ $user->support->lpo }}" width="1100px"></div>
+                        <div><img src="data:image/jpg;base64, {{ $user->support->lpo ?? null }}" width="1100px"></div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
