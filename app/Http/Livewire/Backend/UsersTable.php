@@ -47,7 +47,7 @@ class UsersTable extends DataTableComponent
      */
     public function query(): Builder
     {
-        $query = User::with('roles', 'twoFactorAuth')->withCount('twoFactorAuth');
+        $query = User::with('roles', 'twoFactorAuth', 'biodata')->withCount('twoFactorAuth');
 
         if ($this->status === 'deleted') {
             $query = $query->onlyTrashed();

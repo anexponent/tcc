@@ -55,6 +55,11 @@
                 </tr>
 
                 <tr>
+                    <th>@lang('Occupation')</th>
+                    <td>{{ $user->biodata->occupation ?? __('N/A') }}</td>
+                </tr>
+
+                <tr>
                     <th>@lang('Last Login At')</th>
                     <td>
                         @if($user->last_login_at)
