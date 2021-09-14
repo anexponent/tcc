@@ -142,6 +142,22 @@
                             </div><!--form-group-->
 
                             <div class="form-group row">
+                                <label for="biz_coy_name" class="col-md-4 col-form-label text-md-right">@lang('Business/Company Name')</label>
+
+                                <div class="col-md-6">
+                                    <input type="text" name="biz_coy_name" id="biz_coy_name" class="form-control" placeholder="{{ __('Business/Company Name') }}" value="{{ old('biz_coy_name') }}" maxlength="255" autocomplete="biz_coy_name" />
+                                </div>
+                            </div><!--form-group-->
+
+                            <div class="form-group row">
+                                <label for="biz_type_job_title" class="col-md-4 col-form-label text-md-right">@lang('Business Type/Job Title')</label>
+
+                                <div class="col-md-6">
+                                    <input type="text" name="biz_type_job_title" id="biz_type_job_title" class="form-control" placeholder="{{ __('Business Type/Job Title') }}" value="{{ old('biz_coy_name') }}" maxlength="255" autocomplete="biz_coy_name" />
+                                </div>
+                            </div><!--form-group-->
+
+                            <div class="form-group row">
                                 <label for="membership_status" class="col-md-4 col-form-label text-md-right">@lang('Membership Status')<span style="color:red; font-size:medium">*</span></label>
 
                                 <div class="col-md-6">
