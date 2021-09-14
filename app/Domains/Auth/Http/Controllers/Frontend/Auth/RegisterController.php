@@ -100,10 +100,18 @@ class RegisterController
         $user = $this->userService->registerUser($data);
         $biodata = Biodata::create([
             'user_id' => $user->id,
-            'dob' => $data['dob'],
+            'age' => $data['age'],
+            'gender' => $data['gender'],
             'phone' => $data['phone'],
-            'address' => $data['address'],
-            'occupation' => $data['occupation']
+            'marital_status' => $data['marital_status'],
+            'state' => $data['state'],
+            'local_government' => $data['local_government'],
+            'residential_address' => $data['residential_address'],
+            'highest_education' => $data['highest_education'],
+            'field' => $data['field'],
+            'employement_status' => $data['employement_status'],
+            'membership_status' => $data['membership_status'],
+            'worker_unit' => $data['unit']
         ]);
         return $user;
     }
