@@ -9,7 +9,7 @@
         "prod": "npm run production",
         "production": "mix --production"
     },
-    "devDependencies": {
+    "dependencies": {
         "@coreui/coreui": "^3.0.0",
         "@coreui/icons": "^1.0.1",
         "@fortawesome/fontawesome-free": "^5.12.1",
