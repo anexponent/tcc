@@ -26,18 +26,68 @@
         </tr>
 
         <tr>
-            <th>@lang('Date of Birth')</th>
-            <td>{{ $logged_in_user->biodata->dob ?? null}}</td>
+            <th>@lang('Age')</th>
+            <td>{{ $logged_in_user->biodata->age . ' years' ?? null}}</td>
         </tr>
 
         <tr>
-            <th>@lang('Address')</th>
-            <td>{{ $logged_in_user->biodata->address ?? null}}</td>
+            <th>@lang('Marital Status')</th>
+            <td>{{ $logged_in_user->biodata->marital_status }}</td>
         </tr>
 
         <tr>
-            <th>@lang('Occupation')</th>
-            <td>{{ $logged_in_user->biodata->occupation ?? null}}</td>
+            <th>@lang('State')</th>
+            <td>{{ $logged_in_user->biodata->state }}</td>
+        </tr>
+
+        <tr>
+            <th>@lang('Local Government')</th>
+            <td>{{ $logged_in_user->biodata->state }}</td>
+        </tr>
+
+        <tr>
+            <th>@lang('Residential Address')</th>
+            <td>{{ $logged_in_user->biodata->residential_address ?? null}}</td>
+        </tr>
+
+        <tr>
+            <th>@lang('Gender')</th>
+            <td>{{ $logged_in_user->biodata->gender ?? null}}</td>
+        </tr>
+
+        <tr>
+            <th>@lang('Highest Education')</th>
+            <td>{{ $logged_in_user->biodata->highest_education ?? null}}</td>
+        </tr>
+
+        <tr>
+            <th>@lang('Field')</th>
+            <td>{{ $logged_in_user->biodata->field ?? null}}</td>
+        </tr>
+
+        <tr>
+            <th>@lang('Employement Status')</th>
+            <td>{{ $logged_in_user->biodata->employement_status ?? null}}</td>
+        </tr>
+
+        <tr>
+            <th>@lang('Bisness/Company name')</th>
+            <td>{{ $logged_in_user->biodata->biz_coy_name ?? null}}</td>
+        </tr>
+
+        <tr>
+            <th>@lang('Business Type/Job Title')</th>
+            <td>{{ $logged_in_user->biodata->biz_type_job_title ?? null}}</td>
+        </tr>
+
+        <tr>
+            <th>@lang('Membership Status')</th>
+            <td>{{ $logged_in_user->biodata->membership_status ?? null}}</td>
+        </tr>
+
+        <tr>
+            <th>@lang('Unit')</th>
+            <td>{{ $logged_in_user->biodata->worker_unit ?? null}}</td>
         </tr>
 
         @if ($logged_in_user->isSocial())

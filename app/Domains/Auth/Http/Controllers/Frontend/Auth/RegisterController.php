@@ -75,6 +75,19 @@ class RegisterController
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:100'],
+            'age' => ['required', 'string', 'max:100'],
+            'phone' => ['required', 'string', 'max:100'],
+            'marital_status' => ['required', 'string', 'max:100'],
+            'state' => ['required', 'string', 'max:100'],
+            'local_government' => ['required', 'string', 'max:100'],
+            'residential_address' => ['required', 'string', 'max:100'],
+            'gender' => ['required', 'string', 'max:100'],
+            'highest_education' => ['required', 'string', 'max:100'],
+            'field' => ['required', 'string', 'max:100'],
+            'employement_status' => ['required', 'string', 'max:100'],
+            'biz_coy_name' => ['nullable', 'string', 'max:100'],
+            'biz_type_job_title' => ['nullable', 'string', 'max:100'],
+            'worker_unit' => ['nullable', 'string', 'max:100'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')],
             'password' => array_merge(['max:100'], PasswordRules::register($data['email'] ?? null)),
             'terms' => ['required', 'in:1'],
@@ -100,10 +113,20 @@ class RegisterController
         $user = $this->userService->registerUser($data);
         $biodata = Biodata::create([
             'user_id' => $user->id,
-            'dob' => $data['dob'],
+            'age' => $data['age'],
+            'gender' => $data['gender'],
             'phone' => $data['phone'],
-            'address' => $data['address'],
-            'occupation' => $data['occupation']
+            'marital_status' => $data['marital_status'],
+            'state' => $data['state'],
+            'local_government' => $data['local_government'],
+            'residential_address' => $data['residential_address'],
+            'highest_education' => $data['highest_education'],
+            'biz_coy_name' => $data['biz_coy_name'] ?? null,
+            'biz_type_job_title' => $data['biz_type_job_title'] ?? null,
+            'field' => $data['field'] ?? null,
+            'employement_status' => $data['employement_status'],
+            'membership_status' => $data['membership_status'],
+            'worker_unit' => $data['unit'] ?? null
         ]);
         return $user;
     }

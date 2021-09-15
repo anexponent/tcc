@@ -40,11 +40,21 @@ class UserSeeder extends Seeder
                 'active' => true,
             ]);
             Biodata::create([
-                'dob'=> '1984-01-12',
-                'phone' => '08022330033',
-                'address' => 'Kubwa, Abuja',
-                'occupation' => 'Painter',
-                'user_id' => $u->id
+                'age'                   => '18-25',
+                'phone'                 => '08022330033',
+                'marital_status'        => 'Single',
+                'state'                 => 'Osun',
+                'local_government'      => 'Irepodun',
+                'gender'                => 'Male',
+                'highest_education'     => 'Graduate',
+                'field'                 => 'Electrical',
+                'employement_status'    => 'Employed',
+                'biz_coy_name'          => 'GlobalCom',
+                'biz_type_job_title'    => 'Technical Support',
+                'residential_address'   => 'Kubwa, Abuja',
+                'membership_status'     => 'Worker',
+                'worker_unit'           => 'Technical',
+                'user_id'               => $u->id
             ]);
         }
 

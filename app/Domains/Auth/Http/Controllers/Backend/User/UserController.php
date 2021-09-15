@@ -73,6 +73,7 @@ class UserController
      */
     public function store(StoreUserRequest $request)
     {
+        // dd($request->all());
         $user = $this->userService->store($request->validated());
 
         return redirect()->route('admin.auth.user.show', $user)->withFlashSuccess(__('The user was successfully created.'));
